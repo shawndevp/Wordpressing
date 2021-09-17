@@ -15,4 +15,6 @@ function inl_enqueue(){
 
 }
 
+// Enqueue som kopplar till function.php för att få alla komponenter att synka och fungera, tex css, js, bootstrap. 
+
 ?>

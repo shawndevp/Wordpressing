@@ -13,54 +13,9 @@
 
 	<div id="wrap">
 
-		<header id="header">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-8 col-sm-6">
-						<a class="logo" href="index.html">Labb 1</a>
-					</div>
-					<div class="col-sm-6 hidden-xs">
-						<form id="searchform" class="searchform">
-							<div>
-								<label class="screen-reader-text">Sök efter:</label>
-								<input type="text" />
-								<input type="submit" value="Sök" />
-							</div>
-						</form>
-					</div>
-					<div class="col-xs-4 text-right visible-xs">
-						<div class="mobile-menu-wrap">
-							<i class="fa fa-search"></i>
-							<i class="fa fa-bars menu-icon"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<div class="mobile-search">
-			<form id="searchform" class="searchform">
-				<div>
-					<label class="screen-reader-text">Sök efter:</label>
-					<input type="text" />
-					<input type="submit" value="Sök" />
-				</div>
-			</form>
-		</div>
-
-		<nav id="nav">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<ul class="menu">
-						<?php wp_nav_menu( array(
-    'theme_location' => 'main-menu', 'menu_class' => "menu"
-) ); ?>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
+        <?php
+        get_header();
+        ?>
 
 		<main>
 			<section>
@@ -75,10 +30,12 @@
 							<p>Proin imperdiet imperdiet lacus, eu dignissim nunc rutrum sit amet. Proin purus dui, tempor a mi at, congue ultrices nibh. Nulla in turpis et turpis porttitor blandit sed vitae quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in dui at lacus molestie varius sit amet eu nibh. Donec dolor massa, sollicitudin vitae urna dignissim, porta ornare velit. Nunc non tellus elit. Suspendisse ut risus eu sem sagittis sodales. Sed sed lacinia turpis. Proin nec ex ante. Nulla quis est laoreet, aliquam eros eget, venenatis sem. Morbi nulla dui, bibendum eget lacinia et, placerat ac sapien. Morbi tincidunt blandit erat ut accumsan.</p>
 						</div>
 						<aside id="secondary" class="col-xs-12 col-md-3">
-
+                                
                             <?php wp_nav_menu( array(
     'theme_location' => 'side-menu', 'menu_class' => "Sidemenu", 'container' => 'ul' 
-) ); ?>
+) ); 
+// array för att få in menyn till undersida.php
+?>
 
 						</aside>
 					</div>
@@ -86,55 +43,6 @@
 			</section>
 		</main>
 
-		<footer id="footer">
-			<div class="container">
-				<div class="row top">
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<h4>Kort om oss</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex.</p>
-						<p>Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis.</p>
-					</div>
-					<div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1">
-						<h4>Kontaktuppgifter</h4>
-						<p>
-							The Company<br />
-							Gatgatan 1<br />
-							123 45 Någonstans
-						</p>
-						<p>
-							Tel: 0123456789<br />
-							E-post: <a href="">info@thecompany.com</a>
-						</p>
-					</div>
-					<div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1">
-						<h4>Social media</h4>
-						<ul class="social">
-							<li>
-								<i class="fa fa-facebook"></i> <a href="">Facebook</a>
-							</li>
-							<li>
-								<i class="fa fa-twitter"></i> <a href="">Twitter</a>
-							</li>
-							<li>
-								<i class="fa fa-instagram"></i> <a href="">Instagram</a>
-							</li>
-							<li>
-								<i class="fa fa-linkedin"></i> <a href="">LinkedIn</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="row bottom">
-					<div class="col-xs-12">
-						<p>Copyright &copy; Grupp X, 2016</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-	</div>
-
-	<script src="js/script.js"></script>
-
-</body>
-</html>
+		<?php
+			get_footer();
+		?>

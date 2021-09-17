@@ -25,12 +25,12 @@
 							<h1>Blogg</h1>
 
 							<?php if (have_posts()) :
-									// loop!
+
 								while (have_posts()) : the_post();
 
 							?>
 									<article>
-										<img src="<?php echo get_the_post_thumbnail_url(); /* Hämtar bilden från WP */ ?>" />
+										<img src="<?php echo get_the_post_thumbnail_url(); ?>" />
 										<a href="<?php the_permalink(); ?>">
 											<h1 class="title"><?php the_title(); ?></h1>
 										</a>
@@ -39,23 +39,18 @@
 												<i class="fa fa-calendar"></i><?php the_date(); ?>
 											</li>
 											<li>
-												<i class="fa fa-user"></i> <?php the_author_posts_link(); /* Visar html länk till posten av author */ ?>
+												<i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
 											</li>
 
 											<li>
 												<i class="fa fa-tag"></i> <a href="kategori.html"><?php the_category(", "); ?></a>
 											</li>
 										</ul>
-
-										
-										<p><?php 
-										/* tar en del av P text istället för allt. */
-										the_excerpt(); ?></p>
+										<p><?php the_excerpt(); ?></p>
 
 									</article>
 
 							<?php
-							// end of loop
 								endwhile;
 							else :
 								_e('Inga blogginlägg tillgängliga', 'textdomain');
@@ -65,8 +60,8 @@
 								<?php
 								global $wp_query;
 
-								$big = 999999999; // behöver en ojämn int
-									// paginate kod för att paginate ska fungera 
+								$big = 999999999; // need an unlikely integer
+
 								echo paginate_links(array(
 									'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
 									'format' => '?paged=%#%',
@@ -75,8 +70,8 @@
 								));
 								?>
 							</nav>
-						</div>
-						<aside id="secondary" class="col-xs-12 col-md-3">
+                        </div>
+                        <aside id="secondary" class="col-xs-12 col-md-3">
 							<div id="sidebar">
 								<ul>
 									<li>
